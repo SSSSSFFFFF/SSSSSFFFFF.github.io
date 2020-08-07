@@ -1,25 +1,63 @@
-<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"><title>期货推送</title><meta http-equiv=Cache-Control name=no-store><meta name=apple-mobile-web-app-capable content=yes><meta name=apple-mobile-web-app-status-bar-style content=black><meta content="telephone=no,email=no" name=format-detection><link rel=stylesheet href=./static/lib/css/flexible.css><link rel=stylesheet href=./static/lib/css/base.css><script src=./static/lib/js/jquery-2.1.4.js></script><script src=./static/lib/js/TweenMax.min.js></script><script src=./static/lib/js/html2canvas.min.js></script><script>// var host =  'http://demo.tonghang.oneil88.com';
-    var host = 'http://www.tonghanglocal.com';
-    var sizePxRem = 0;
-    var int_ph = function (doc, win) {
-      var docEle = doc.documentElement,
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
 
-        resizeEvent = 'orientationchange' in window ? 'orientationchange' : 'resize';
+  <title>Cocos Creator | hello_world</title>
 
-      var recalCulate = function () {
-        var width = docEle.clientWidth;
-        if (width > 750) {
-          width = 750;
-        }
-        var rem = Math.round(100 * (width / 750))
-        docEle.style.fontSize = rem + 'px';
-        sizePxRem = rem;
-      };
-      recalCulate();
-      if (!doc.addEventListener) return;
-      win.addEventListener(resizeEvent, recalCulate, false);
+  <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1, minimum-scale=1,maximum-scale=1"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="full-screen" content="yes"/>
+  <meta name="screen-orientation" content="portrait"/>
+  <meta name="x5-fullscreen" content="true"/>
+  <meta name="360-fullscreen" content="true"/>
+  
+  <meta name="renderer" content="webkit"/>
+  <meta name="force-rendering" content="webkit"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  
+  <link rel="stylesheet" type="text/css" href="style-desktop.css"/>
+</head>
+<body>
+<h1 class="header">hello_world</h1>
 
+<div id="GameDiv" style="width:1280px; height: 720px;">
+  <canvas id="GameCanvas" width="1280" height="720"></canvas>
+  <div id="splash">
+    <div class="progress-bar stripes">
+      <span style="width: 0%"></span>
+    </div>
+  </div>
+</div>
+
+<p class="footer">Created with <a href="http://cocos.com/cocoscreator" title="cocos creator">Cocos Creator</a></p>
+
+<script src="src/settings.js" charset="utf-8"></script>
+<script src="main.js" charset="utf-8"></script>
+
+<script type="text/javascript">
+(function () {
+    // open web debugger console
+    if (typeof VConsole !== 'undefined') {
+        window.vConsole = new VConsole();
     }
 
-    int_ph(document, window);
-    // console.log = function() {}</script><link href=/weixin/css/app.14b7f0d1890afca74919bf5e08072c4f.css rel=stylesheet></head><body><div id=app></div><script></script><script type=text/javascript src=/weixin/js/manifest.897efc749f259337789b.js></script><script type=text/javascript src=/weixin/js/vendor.2dba619f74b29c4f5132.js></script><script type=text/javascript src=/weixin/js/app.c0bc83a9b0ce28f28b0f.js></script></body></html>
+    var splash = document.getElementById('splash');
+    splash.style.display = 'block';
+
+    var cocos2d = document.createElement('script');
+    cocos2d.async = true;
+    cocos2d.src = window._CCSettings.debug ? 'cocos2d-js.js' : 'cocos2d-js-min.js';
+
+    var engineLoaded = function () {
+        document.body.removeChild(cocos2d);
+        cocos2d.removeEventListener('load', engineLoaded, false);
+        window.boot();
+    };
+    cocos2d.addEventListener('load', engineLoaded, false);
+    document.body.appendChild(cocos2d);
+})();
+</script>
+
+</body>
+</html>
