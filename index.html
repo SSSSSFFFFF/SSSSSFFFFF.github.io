@@ -1,51 +1,25 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"><title>期货推送</title><meta http-equiv=Cache-Control name=no-store><meta name=apple-mobile-web-app-capable content=yes><meta name=apple-mobile-web-app-status-bar-style content=black><meta content="telephone=no,email=no" name=format-detection><link rel=stylesheet href=./static/lib/css/flexible.css><link rel=stylesheet href=./static/lib/css/base.css><script src=./static/lib/js/jquery-2.1.4.js></script><script src=./static/lib/js/TweenMax.min.js></script><script src=./static/lib/js/html2canvas.min.js></script><script>// var host =  'http://demo.tonghang.oneil88.com';
+    var host = 'http://www.tonghanglocal.com';
+    var sizePxRem = 0;
+    var int_ph = function (doc, win) {
+      var docEle = doc.documentElement,
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-  <div>
-    ## Welcome to GitHub Pages
+        resizeEvent = 'orientationchange' in window ? 'orientationchange' : 'resize';
 
-You can use the [editor on GitHub](https://github.com/SSSSSFFFFF/sf.github.io/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+      var recalCulate = function () {
+        var width = docEle.clientWidth;
+        if (width > 750) {
+          width = 750;
+        }
+        var rem = Math.round(100 * (width / 750))
+        docEle.style.fontSize = rem + 'px';
+        sizePxRem = rem;
+      };
+      recalCulate();
+      if (!doc.addEventListener) return;
+      win.addEventListener(resizeEvent, recalCulate, false);
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+    }
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/SSSSSFFFFF/sf.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
-
-  </div>
-</body>
-</html>
+    int_ph(document, window);
+    // console.log = function() {}</script><link href=/weixin/css/app.14b7f0d1890afca74919bf5e08072c4f.css rel=stylesheet></head><body><div id=app></div><script></script><script type=text/javascript src=/weixin/js/manifest.897efc749f259337789b.js></script><script type=text/javascript src=/weixin/js/vendor.2dba619f74b29c4f5132.js></script><script type=text/javascript src=/weixin/js/app.c0bc83a9b0ce28f28b0f.js></script></body></html>
